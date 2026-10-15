@@ -4,7 +4,13 @@ Use this file when filling in the Lagos Life / Vatar developer dashboard. Local 
 
 ## Game URL (fill after deploy)
 
-Deploy `dist/` to **HTTPS** with the `frame-ancestors` CSP (see `vercel.json`, `netlify.toml`, or `public/_headers`). Then paste the production URL here:
+Source repo: https://github.com/Vectormike/street-food-rush
+
+Import to Vercel (uses `vercel.json` CSP): https://vercel.com/new/import?s=https%3A%2F%2Fgithub.com%2FVectormike%2Fstreet-food-rush
+
+Or Netlify (uses `netlify.toml`): connect the same repo; build `npm run build`, publish `dist`.
+
+Then paste the production URL here:
 
 ```
 GAME_URL=
