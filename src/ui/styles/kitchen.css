@@ -1,0 +1,274 @@
+.kitchen {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 6px;
+  padding: 5px;
+  border: 2px solid var(--ink);
+  border-radius: 18px;
+  background: repeating-conic-gradient(#e6f0f6 0 25%, #c9dce9 0 50%) 0 0 / 18px 18px;
+}
+
+.prep {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 84px;
+  padding: 4px;
+  gap: 4px;
+  border-radius: 14px;
+  background: #8a5a36;
+  box-shadow: 0 3px 0 var(--ink);
+}
+
+.prep:disabled {
+  opacity: 1;
+  cursor: default;
+}
+
+.board {
+  position: relative;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--ink);
+  overflow: hidden;
+  border-radius: 10px;
+  background:
+    radial-gradient(
+      ellipse at 30% 40%,
+      transparent 0 8px,
+      rgb(122 68 40 / 0.18) 9px 10px,
+      transparent 11px
+    ),
+    repeating-linear-gradient(90deg, #e7b77d 0 9px, #dca76b 9px 12px);
+}
+
+.board::before {
+  position: absolute;
+  width: 80%;
+  height: 3px;
+  border-radius: 2px;
+  background: #fff;
+  box-shadow: 0 0 6px #fff;
+  content: '';
+  opacity: 0;
+  transform: rotate(-35deg);
+}
+
+.prep.chopping .board::before {
+  animation: slash 180ms ease-out;
+}
+
+.board::after {
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  color: rgb(61 31 16 / 0.55);
+  content: 'Board';
+  font-size: 0.55rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.prep[data-busy='true'] .board::after {
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--cream);
+  content: 'Tap to chop';
+  animation: pulse 0.9s ease-in-out infinite;
+}
+
+.prep[data-slicing='true'] .board::after {
+  background: var(--green);
+  content: 'Chop chop!';
+  animation: none;
+}
+
+.board-art {
+  width: 52px;
+  height: 52px;
+}
+
+.cuts {
+  position: absolute;
+  bottom: 3px;
+  display: flex;
+  gap: 3px;
+}
+
+.cuts i {
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  background: var(--yellow);
+}
+
+.knife {
+  position: absolute;
+  top: 8px;
+  right: 2px;
+  width: 26px;
+  height: 11px;
+  border: 2px solid var(--ink);
+  border-radius: 2px 9px 2px 2px;
+  background: linear-gradient(#f4f6f9, #aeb6c1);
+  transform: rotate(-30deg);
+  transform-origin: 0 100%;
+}
+
+.knife::after {
+  position: absolute;
+  top: 1px;
+  left: -14px;
+  width: 12px;
+  height: 5px;
+  border: 2px solid var(--ink);
+  border-radius: 3px;
+  background: #6b3a1f;
+  content: '';
+}
+
+.prep[data-busy='false'] .knife {
+  opacity: 0.45;
+}
+
+.prep.chopping .knife {
+  animation: slice 160ms ease-in;
+}
+
+.prep.chopping .board-art {
+  animation: shake 160ms ease;
+}
+
+.bowl {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  border: 2px solid var(--ink);
+  border-radius: 10px 10px 30px 30px;
+  background: radial-gradient(circle at 50% 30%, #fffaf3, #e9dcc5);
+}
+
+.bowl-food:empty::before {
+  color: rgb(61 31 16 / 0.4);
+  content: 'Bowl';
+  font-size: 0.55rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.bowl-food {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.bowl-art {
+  width: 26px;
+  height: 26px;
+  margin: -4px;
+}
+
+.bowl-ready {
+  display: none;
+  margin-top: -6px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: var(--green);
+  color: var(--cream);
+  font-size: 0.55rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.kitchen[data-ready='true'] .bowl-ready {
+  display: block;
+}
+
+@keyframes slice {
+  50% {
+    transform: rotate(10deg) translate(-4px, 8px);
+  }
+}
+
+@keyframes slash {
+  30% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: rotate(-35deg) translateY(10px);
+  }
+}
+
+@keyframes simmer {
+  to {
+    transform: translateY(-3px) rotate(6deg);
+  }
+}
+
+@media (min-width: 900px) {
+  .shelf-tabs {
+    display: none;
+  }
+
+  .shelf[data-open='false'] {
+    display: grid;
+  }
+
+  .shelf {
+    padding-top: 8px;
+  }
+
+  .shelf-label {
+    display: block;
+  }
+
+  .tray {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    align-items: stretch;
+    align-self: center;
+    width: min(94vw, 900px);
+  }
+
+  .kitchen {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+  }
+
+  .board-art {
+    width: 64px;
+    height: 64px;
+  }
+
+  .bowl-art {
+    width: 38px;
+    height: 38px;
+  }
+
+  .burners {
+    justify-content: space-between;
+  }
+
+  .burner {
+    flex: 1;
+    min-height: 96px;
+  }
+
+  .burner-ring {
+    width: 72px;
+  }
+
+  .burner-pot {
+    width: 54px;
+    height: 34px;
+  }
+
+  .burner-art {
+    width: 50px;
+    height: 50px;
+    margin-top: -26px;
+  }
+}

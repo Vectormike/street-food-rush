@@ -1,0 +1,203 @@
+.tray {
+  display: grid;
+  gap: 7px;
+  padding: 8px;
+  border: 3px solid var(--ink);
+  border-radius: 14px;
+  background: #5a301c;
+  box-shadow: 0 5px 0 var(--ink);
+}
+
+.tile:active:not(:disabled),
+.burner:active:not(:disabled),
+.prep:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--ink);
+}
+
+.tile[data-next='true'],
+.prep[data-next='true'],
+.burner[data-next='true'] {
+  background: var(--yellow);
+  animation: glow 0.9s ease-in-out infinite;
+}
+
+.tile.miss,
+.burner.miss {
+  background: #ffd0c9;
+  border-color: var(--red);
+  animation: shake 360ms ease;
+}
+
+#stage[data-phase='tutorial'] [data-next='true']::after {
+  position: absolute;
+  right: -10px;
+  bottom: -16px;
+  font-size: 1.6rem;
+  content: '👆';
+  pointer-events: none;
+  animation: point 0.8s ease-in-out infinite;
+}
+
+.coach {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 6px 6px 12px;
+  border-radius: 14px;
+  background: var(--ink);
+  color: var(--cream);
+  animation: card-in 260ms ease;
+}
+
+.coach[hidden],
+#stage[data-phase='tutorial'] .patience {
+  display: none;
+}
+
+.coach p {
+  flex: 1;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.coach[data-missed='true'] {
+  background: var(--red);
+}
+
+.coach button {
+  min-height: 44px;
+  border-color: var(--cream);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--cream);
+  font-size: 0.9rem;
+}
+
+#stage[data-theme='ankara'] .tray {
+  background: repeating-linear-gradient(
+    135deg,
+    #5a301c 0 14px,
+    #1f8a4c 14px 20px,
+    #f5c542 20px 26px
+  );
+}
+
+#stage[data-feedback='wrong'] .ticket {
+  animation: shake 360ms ease;
+  border-color: var(--red);
+}
+
+#stage[data-feedback='served'] .ticket {
+  animation: pop 360ms ease;
+  border-color: var(--green);
+}
+
+#pops {
+  display: grid;
+  place-items: start center;
+  padding-top: 26dvh;
+}
+
+.pop {
+  grid-area: 1 / 1;
+  color: var(--cream);
+  font-size: 2.4rem;
+  font-weight: 900;
+  -webkit-text-stroke: 2px var(--ink);
+  paint-order: stroke fill;
+  text-shadow: 0 4px 0 var(--ink);
+  animation: float-up 1s ease-out forwards;
+}
+
+.pop-combo {
+  margin-top: 52px;
+  color: #ff8a5b;
+  font-size: 1.6rem;
+}
+
+.pop-go {
+  color: var(--yellow);
+  font-size: 3rem;
+}
+
+.pop-hint {
+  margin-top: 96px;
+  padding: 4px 14px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--yellow);
+  color: var(--ink);
+  font-size: 0.95rem;
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+}
+
+.fly {
+  position: fixed;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.fly-art {
+  width: 44px;
+  height: 44px;
+}
+
+.pop-dish {
+  margin-top: -70px;
+}
+
+.cooked-art {
+  width: 120px;
+  height: 120px;
+  filter: drop-shadow(0 6px 0 rgb(29 36 51 / 0.5));
+}
+
+@keyframes glow {
+  50% {
+    box-shadow:
+      0 3px 0 var(--ink),
+      0 0 0 5px rgb(255 241 194 / 0.9);
+  }
+}
+
+@keyframes point {
+  50% {
+    transform: translate(-3px, -6px);
+  }
+}
+
+@keyframes shake {
+  20%,
+  60% {
+    transform: translateX(-6px);
+  }
+  40%,
+  80% {
+    transform: translateX(6px);
+  }
+}
+
+@keyframes pop {
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+@keyframes float-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.7);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0) scale(1.1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-60px) scale(1);
+  }
+}

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy · Street Food Rush</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <style>
+      body {
+        margin: 0;
+        background: #1d2433;
+        color: #1d2433;
+        font:
+          16px/1.5 system-ui,
+          sans-serif;
+      }
+      main {
+        max-width: 42rem;
+        margin: 24px auto;
+        padding: 24px;
+        background: #fffaf3;
+        border-radius: 28px;
+      }
+      a {
+        color: #1d2433;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Privacy</h1>
+      <p>
+        Street Food Rush does not create its own accounts and does not ask for your name, email,
+        phone number or location.
+      </p>
+      <p>
+        Inside Lagos Life, the game receives only what the Vatar Games SDK provides for this game: a
+        pseudonymous player id, display name, avatar and a short-lived session. That information
+        stays in the game session. It is not sold or combined with another service.
+      </p>
+      <p>
+        Practice mode stores one personal best in this browser under the key
+        <code>street-food-rush-local-best</code>. Clearing site data removes it.
+      </p>
+      <p>
+        When the cosmetic purchase server is configured, it stores the pseudonymous player id, the
+        product id and the purchase id needed to deliver the Ankara counter once. It does not store
+        a username, email, location or payment card.
+      </p>
+      <p>
+        A player record can be deleted by sending <code>POST /players/delete</code> to the game
+        server with the server secret and the pseudonymous player id. This supports a request under
+        the Nigeria Data Protection Act 2023.
+      </p>
+      <p><a href="/support.html">Support</a></p>
+    </main>
+  </body>
+</html>

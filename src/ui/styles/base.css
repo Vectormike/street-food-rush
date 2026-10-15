@@ -1,0 +1,159 @@
+:root {
+  --ink: #1d2433;
+  --cream: #fffaf3;
+  --paper: #f6efe2;
+  --yellow: #f5c542;
+  --yellow-deep: #e0a91e;
+  --red: #d94a3a;
+  --green: #1f8a4c;
+  --muted: #6d5a45;
+  --shadow: 0 6px 0 var(--ink);
+  color: var(--ink);
+  background: #fde3a7;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  -webkit-tap-highlight-color: transparent;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  overscroll-behavior: none;
+  user-select: none;
+}
+
+button,
+a {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  min-height: 48px;
+  border: 3px solid var(--ink);
+  border-radius: 16px;
+  padding: 0 16px;
+  background: var(--cream);
+  font-weight: 700;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition:
+    transform 80ms ease,
+    box-shadow 80ms ease;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #2f6fde;
+  outline-offset: 3px;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.primary {
+  min-height: 58px;
+  border-radius: 999px;
+  background: var(--yellow);
+  box-shadow: 0 5px 0 var(--ink);
+  font-size: 1.15rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.primary:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 var(--ink);
+}
+
+.secondary {
+  border-radius: 999px;
+  box-shadow: 0 4px 0 var(--ink);
+}
+
+#stage {
+  position: relative;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+#game,
+#hud,
+#pops,
+#overlay {
+  position: absolute;
+  inset: 0;
+}
+
+#game canvas {
+  display: block;
+}
+
+#hud,
+#pops,
+#overlay {
+  pointer-events: none;
+}
+
+#hud button,
+#overlay .card,
+#overlay button,
+#overlay a {
+  pointer-events: auto;
+}
+
+.banner {
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  background: #fff1c2;
+  font-size: 0.95rem;
+}
+
+.art {
+  display: inline-block;
+  flex: none;
+  background-repeat: no-repeat;
+}
+
+.hero-art {
+  width: 88%;
+  height: 88%;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

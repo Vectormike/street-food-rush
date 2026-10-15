@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Street Food Rush">
+  <rect width="512" height="512" rx="96" fill="#1d2433"/>
+  <ellipse cx="256" cy="330" rx="150" ry="62" fill="#8a4b2f"/>
+  <path d="M120 318c0-86 60-156 136-156s136 70 136 156" fill="#f6efe2"/>
+  <ellipse cx="256" cy="250" rx="78" ry="46" fill="#d3542f"/>
+  <circle cx="228" cy="236" r="14" fill="#f5c542"/>
+  <circle cx="268" cy="248" r="10" fill="#1f8a4c"/>
+  <path d="M300 214c18-28 42-36 58-24 10 8 8 24-8 34" fill="#c47b2b"/>
+</svg>
