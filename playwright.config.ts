@@ -16,7 +16,21 @@ export default defineConfig({
   },
   projects: [
     {
+      name: 'lagoslife-auth',
+      testMatch: 'lagoslife-auth.setup.ts',
+    },
+    {
+      name: 'vatar-sandbox',
+      testMatch: 'sandbox-purchase.spec.ts',
+      dependencies: ['lagoslife-auth'],
+      use: {
+        storageState: 'e2e/.auth/lagoslife.json',
+        viewport: { width: 1280, height: 900 },
+      },
+    },
+    {
       name: 'mobile',
+      testIgnore: ['**/lagoslife-auth.setup.ts', '**/sandbox-purchase.spec.ts'],
       use: {
         viewport: { width: 375, height: 812 },
         isMobile: true,
@@ -25,6 +39,7 @@ export default defineConfig({
     },
     {
       name: 'desktop',
+      testIgnore: ['**/lagoslife-auth.setup.ts', '**/sandbox-purchase.spec.ts'],
       use: {
         viewport: { width: 1280, height: 800 },
       },

@@ -20,6 +20,7 @@ export function menuCard(state: ShiftState, presentation: Presentation): string 
       ${playerRow(presentation)}
       ${cashChip(presentation.cash)}
       ${noticeBlock(presentation.notice)}
+      ${purchaseButton(presentation)}
       <button class="primary" type="button" data-action="start" data-testid="start-shift">Start shift</button>
       <ol class="how">
         <li><b>1</b>Read the order ticket</li>
@@ -27,7 +28,6 @@ export function menuCard(state: ShiftState, presentation: Presentation): string 
         <li><b>3</b>Cook on a burner and serve before it burns</li>
       </ol>
       ${shopButton(state.kit, presentation.cash)}
-      ${purchaseButton(presentation)}
       <p class="links"><a href="/privacy.html">Privacy</a><a href="/support.html">Support</a></p>
     </section>
   `;

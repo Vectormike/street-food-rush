@@ -15,6 +15,7 @@
     "test:e2e": "playwright test",
     "lint": "eslint .",
     "server": "tsx server/index.ts",
+    "sandbox:host": "bash scripts/sandbox-host.sh",
     "format": "prettier --write ."
   },
   "dependencies": {

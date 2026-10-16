@@ -82,6 +82,10 @@ export class GameController {
     }
     this.bind();
     this.publish();
+    requestAnimationFrame(() => {
+      window.dispatchEvent(new Event('resize'));
+      this.publish();
+    });
     this.frame = window.requestAnimationFrame((now) => this.loop(now));
     if (this.serverUrl && this.platform.kind === 'vatar') {
       try {

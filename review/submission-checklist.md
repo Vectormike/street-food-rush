@@ -13,10 +13,10 @@ Local checks are marked from this repository. Sandbox and store submission stay 
 - [x] Secrets stay in server environment variables. The client source has no secret key.
 - [x] No login, personal-data form, outside payment, ad, gambling or cash-out.
 - [x] Privacy and support pages are published with the game.
-- [ ] Deploy the HTTPS build and confirm the frame header on that origin. (`dist/` is built; use Vercel/Netlify/Cloudflare — configs in repo.)
-- [ ] Submit the developer key form while signed in to Lagos Life: https://lagoslife.app/developers/keys
-- [ ] Store the one-time test secret and webhook signing secret outside the repository.
-- [ ] Add the Ankara counter in the Vatar dashboard with the id `ankara_counter`.
-- [ ] Open the sandbox and confirm init, pause, score, leaderboard and a test purchase.
+- [ ] Deploy the HTTPS build and confirm the frame header on that origin. (Sandbox uses temporary tunnels — see `review/SANDBOX.md`; production: Vercel.)
+- [x] Submit the developer key form while signed in to Lagos Life: https://lagoslife.app/developers/keys
+- [x] Store the one-time test secret and webhook signing secret outside the repository.
+- [x] Add the Ankara counter in the Vatar dashboard with the id `ankara_counter`.
+- [ ] Open the sandbox and confirm init, pause, score, leaderboard and a test purchase. (SDK init ✓, webhook 2xx ✓; test purchase + server verify + delivered still needed — tap **Ankara counter** in sandbox.)
 - [x] Upload assets prepared: `review/icon-512.png`, `review/screenshots/01–05-*.png`, copy in `review/listing.md` and `review/SUBMISSION-PACKET.md`.
 - [ ] Submit the game for review from the Vatar dashboard.

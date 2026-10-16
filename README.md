@@ -39,6 +39,8 @@ The server verifies a Vatar session, checks `GET /purchases/{id}`, grants `ankar
 
 ## Vatar sandbox
 
+While testing locally, run `npm run sandbox:host` and follow `review/SANDBOX.md`.
+
 These steps need the Lagos Life account that will own the game:
 
 1. Deploy the HTTPS build.

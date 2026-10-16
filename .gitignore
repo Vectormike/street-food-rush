@@ -6,6 +6,8 @@ dist/
 data/
 playwright-report/
 test-results/
+e2e/.auth/
+review/current-urls.env
 blob-report/
 .DS_Store
 *.tsbuildinfo
