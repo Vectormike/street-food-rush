@@ -37,6 +37,8 @@ The server verifies a Vatar session, checks `GET /purchases/{id}`, grants `ankar
 
 `npm run build` writes a static site to `dist/`. `vercel.json` sends the documented `frame-ancestors` header. Point `VITE_SERVER_URL` at the deployed purchase server before building if the cosmetic counter should be offered inside Lagos Life.
 
+Purchase server: **[Railway](deploy/railway/README.md)** (recommended) or **[VPS](deploy/vps/README.md)**.
+
 ## Vatar sandbox
 
 While testing locally, run `npm run sandbox:host` and follow `review/SANDBOX.md`.

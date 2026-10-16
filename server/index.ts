@@ -10,8 +10,9 @@ const env = loadEnv(process.env);
 const server = createServer(createApp({ env, store: new EntitlementStore(env.entitlementsPath) }));
 
 if (isMain()) {
-  server.listen(env.port, () => {
-    console.info(JSON.stringify({ status: 'listening', port: env.port }));
+  const host = process.env.HOST?.trim() || '0.0.0.0';
+  server.listen(env.port, host, () => {
+    console.info(JSON.stringify({ status: 'listening', host, port: env.port }));
   });
 }
 

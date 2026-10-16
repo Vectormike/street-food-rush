@@ -1,0 +1,3 @@
+# Skip Vite game build on Railway — this service only runs the purchase API.
+[phases.build]
+cmds = []

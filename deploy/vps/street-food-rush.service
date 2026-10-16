@@ -1,0 +1,19 @@
+[Unit]
+Description=Street Food Rush purchase server
+After=network.target
+
+[Service]
+Type=simple
+User=streetfood
+Group=streetfood
+WorkingDirectory=/opt/street-food-rush
+Environment=NODE_ENV=production
+ExecStart=/usr/bin/npm run server
+Restart=on-failure
+RestartSec=5
+
+# Hardening (optional; remove if npm path differs)
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
