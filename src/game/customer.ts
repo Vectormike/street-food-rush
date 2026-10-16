@@ -9,7 +9,7 @@ import cast6 from '../assets/customer-6.webp';
 import cast7 from '../assets/customer-7.webp';
 import type { Customer } from '../core/state';
 import { MEAL_SHEET, mealIndex } from '../ui/art';
-import { LINES } from './lines';
+import { LINES, QUEUE_LINES } from './lines';
 
 export const EMOTIONS = [
   'hungry',
@@ -109,14 +109,14 @@ export class CustomerSprite {
     this.update(customer);
   }
 
-  update(customer: Customer): void {
+  update(customer: Customer, inLine = false): void {
     if (this.scene.time.now < this.heldUntil) return;
-    this.show(emotionFor(customer, this.temper));
+    this.show(emotionFor(customer, this.temper), inLine);
   }
 
   react(emotion: Emotion, holdMs: number): void {
     this.heldUntil = this.scene.time.now + holdMs;
-    this.show(emotion);
+    this.show(emotion, false);
   }
 
   destroy(): void {
@@ -125,12 +125,13 @@ export class CustomerSprite {
     this.container.destroy(true);
   }
 
-  private show(emotion: Emotion): void {
+  private show(emotion: Emotion, inLine: boolean): void {
     if (emotion === this.emotion) return;
     this.emotion = emotion;
     const pose = Phaser.Math.RND.between(0, POSES - 1);
     this.portrait.setFrame(EMOTIONS.indexOf(emotion) + pose * EMOTIONS.length);
-    this.say(Phaser.Math.RND.pick(LINES[emotion]));
+    const lines = (inLine && QUEUE_LINES[emotion]) || LINES[emotion];
+    this.say(Phaser.Math.RND.pick(lines));
     this.gesturing(emotion);
   }
 

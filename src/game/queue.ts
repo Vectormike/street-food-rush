@@ -49,7 +49,7 @@ export class CustomerQueue {
       const sprite = this.sprites.get(customer.id);
       if (!sprite) this.arrive(customer, spot, leaving ? REACTION_MS : 0);
       else {
-        sprite.update(customer);
+        sprite.update(customer, index > 0);
         this.slide(customer.id, sprite, spot, 0);
       }
       (sprite ?? this.sprites.get(customer.id))?.container.setDepth(1 - index * 0.01);

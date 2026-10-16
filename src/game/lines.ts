@@ -122,3 +122,31 @@ export const LINES: Record<Emotion, string[]> = {
     'Another day…',
   ],
 };
+
+// Customers still waiting behind the counter grumble about the line, not their food.
+export const QUEUE_LINES: Partial<Record<Emotion, string[]>> = {
+  impatient: [
+    'This line no dey move o!',
+    'How long I go stand here?',
+    'Abeg, na queue be this?',
+    'Who dey hold the line?',
+    'Oga, people dey wait o!',
+    'Time dey waste for here!',
+  ],
+  pleading: [
+    'Abeg, no forget us for back!',
+    'Biko, my turn dey come?',
+    'Abeg, make the line move!',
+    'I dey here since o!',
+    'Small small, reach my turn!',
+    'No let me waste for line abeg!',
+  ],
+  angry: [
+    'Na waste of time be this!',
+    'I don tire for this line!',
+    'See queue! Na wa o!',
+    'This wait no make sense!',
+    'Una dey waste my time!',
+    'Line no dey move at all!',
+  ],
+};
