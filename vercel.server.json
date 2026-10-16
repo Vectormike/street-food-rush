@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "installCommand": "npm ci",
+  "builds": [
+    {
+      "src": "server/vercel-handler.ts",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["server/**", "shared/**"]
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "server/vercel-handler.ts"
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 import { createHmac, randomUUID, timingSafeEqual } from 'node:crypto';
 import type { IncomingMessage, ServerResponse } from 'node:http';
-import { ANKARA_COUNTER_PRODUCT_ID } from '../shared/products';
-import type { ServerEnv } from './env';
-import { EntitlementStore } from './store';
+import { ANKARA_COUNTER_PRODUCT_ID } from '../shared/products.js';
+import type { ServerEnv } from './env.js';
+import { EntitlementStore } from './store.js';
 
 const MAX_BODY = 16 * 1024;
 const PURCHASE_ID = /^[a-zA-Z0-9_-]{1,80}$/;

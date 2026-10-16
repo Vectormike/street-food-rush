@@ -1,9 +1,9 @@
 import { createServer } from 'node:http';
 import { readFileSync, realpathSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
-import { loadEnv } from './env';
-import { createApp } from './http';
-import { EntitlementStore } from './store';
+import { loadEnv } from './env.js';
+import { createApp } from './http.js';
+import { EntitlementStore } from './store.js';
 
 loadLocalEnv();
 const env = loadEnv(process.env);
