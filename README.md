@@ -2,6 +2,14 @@
 
 A 90-second Lagos street-food game for the Vatar Games SDK. Practice mode runs on its own. Inside Lagos Life it can show the player, submit a score and deliver one cosmetic counter.
 
+<p align="center">
+  <img src="review/screenshots/01-menu.png" alt="Menu with the kitchen shop" width="180">
+  <img src="review/screenshots/02-tutorial.png" alt="Guided jollof practice order" width="180">
+  <img src="review/screenshots/03-jollof.png" alt="Suya cooking while the next customer waits" width="180">
+  <img src="review/screenshots/04-paused.png" alt="Paused shift" width="180">
+  <img src="review/screenshots/05-results.png" alt="End of shift results" width="180">
+</p>
+
 ## Play locally
 
 ```bash
