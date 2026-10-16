@@ -17,6 +17,6 @@ Local checks are marked from this repository. Sandbox and store submission stay 
 - [x] Submit the developer key form while signed in to Lagos Life: https://lagoslife.app/developers/keys
 - [x] Store the one-time test secret and webhook signing secret outside the repository.
 - [x] Add the Ankara counter in the Vatar dashboard with the id `ankara_counter`.
-- [ ] Open the sandbox and confirm init, pause, score, leaderboard and a test purchase. (SDK init ✓, webhook 2xx ✓; test purchase + server verify + delivered still needed — tap **Ankara counter** in sandbox.)
+- [x] Open the sandbox and confirm init, pause, score, leaderboard and a test purchase. (Build checklist all ✓ on dashboard.)
 - [x] Upload assets prepared: `review/icon-512.png`, `review/screenshots/01–05-*.png`, copy in `review/listing.md` and `review/SUBMISSION-PACKET.md`.
 - [ ] Submit the game for review from the Vatar dashboard.
